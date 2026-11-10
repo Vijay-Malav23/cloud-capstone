@@ -21,3 +21,20 @@ A containerized RESTful API backend built with Spring Boot 3, Spring Security 6 
 ### Run with Docker Compose
 ```bash
 docker compose up --build
+API Endpoints
+Authentication (/api/auth)
+POST /api/auth/register - Register a new user (ROLE_USER or ROLE_ADMIN)
+
+POST /api/auth/login - Authenticate and obtain a JWT bearer token
+
+Resources (/api/resources)
+GET /api/resources - Retrieve all items (ROLE_USER, ROLE_ADMIN)
+
+POST /api/resources - Create a new item (ROLE_USER, ROLE_ADMIN)
+
+DELETE /api/resources/{id} - Delete an item (ROLE_ADMIN only)
+
+Documentation & Health
+Swagger UI: http://localhost:8080/swagger-ui/index.html
+
+Health Endpoint: http://localhost:8080/actuator/health
